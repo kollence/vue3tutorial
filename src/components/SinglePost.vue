@@ -6,7 +6,7 @@
         <p>{{snippet}}</p>
         <div>
           <div class="pill" v-for="skill in post.tags" :key="skill">
-            <router-link :to="{ params: {tag: skill}}"> {{ skill }} </router-link>
+            <router-link :to="{name: 'tags', params: {tag: skill}}"> {{ skill }} </router-link>
           </div>
         </div>
         <small>user id {{post.userId}}</small>
