@@ -21,11 +21,15 @@ export default {
     setup(){
         const route = useRoute()
         const tag = route.params.tag
+
         const {posts, error, loadPosts } = getPosts()
+
         loadPosts()
+
         const filterByTags = computed(() => {
-            return  posts.value.filter(post => post.tags.includes(tag))
+            return  posts.value.filter(post => post.tags.includes(route.params.tag))
         })
+
         return {error, posts, filterByTags, tag}
     }
 
