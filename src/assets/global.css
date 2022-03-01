@@ -1,0 +1,75 @@
+body{
+    margin: 0;
+  }
+  #app {
+    background-color: burlywood;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    min-height: 100vh;
+    height: 100%;
+  }
+  .form {
+    max-width: 420px;
+    margin: 30px auto;
+    background: rgb(194, 194, 151);
+    text-align: left;
+    padding: 1em;
+    border-radius: 10px;
+    border: 1px solid gray;
+  }
+  .form label {
+    color: rgb(36, 57, 243);
+    display: inline-block;
+    margin: 23px 0 15px;
+    text-transform: uppercase;
+    font-size: 0.6em;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  .form input, textarea {
+    display: block;
+    width: 100%;
+    padding: 10px 5px;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid red;
+    color: brown;
+  }
+  .form select {
+    display: block;
+    width: 100%;
+    padding: 10px 5px;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid red;
+    color: brown;
+  }
+  .form input[type="checkbox"] {
+    display: inline-block;
+    width: 16px;
+    margin: 0 10px 0 0;
+    position: relative;
+    top: 3px;
+  }
+  .pill {
+    display: inline-block;
+    border-radius: 5px;
+    background: greenyellow;
+    padding: 5px 10px;
+    margin: 10px 10px 10px 0;
+  }
+  .form button {
+    background: rgb(12, 146, 0);
+    border: 0;
+    padding: 9px 20px;
+    margin-top: 20px;
+    border-radius: 20px;
+    text-align: center;
+    cursor: pointer;
+  }
+  .submit {
+      text-align: center;
+  }
