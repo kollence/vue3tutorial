@@ -1,9 +1,16 @@
 <template>
   <h1>Posts</h1>
+  <small>fetch api from file data/db.json with json-server <br>
+  to start after npm installation json-server --watch data/db.json --port 3000
+   </small>
   <div v-if="error">{{error}}</div>
   <div v-if="posts.length" class="postslist">
   <div class="actions"><router-link to="/create">Create</router-link></div>
+  <div style="display: flex;">
   <PostList :posts="posts" />
+  <TagList :posts="posts" />
+  </div>
+
   </div>
   <div v-else><Loader /></div>
 </template>
@@ -12,11 +19,12 @@
 import PostList from "@/components/PostList.vue";
 import getPosts from "@/composables/getPosts"
 import Loader from '@/components/Loader.vue'
+import TagList from '@/components/TagList.vue'
 
 export default {
   name: "posts",
   components: {
-    PostList, Loader
+    PostList, Loader,TagList
   },
   setup() {
 

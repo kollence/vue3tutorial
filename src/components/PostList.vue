@@ -20,5 +20,7 @@ setup(props){
 </script>
 
 <style>
-
+.post-list{
+    max-width: 66%;
+}
 </style>

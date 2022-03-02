@@ -48,6 +48,11 @@ const routes = [
     name: 'tags',
     component: () => import('../views/Tags.vue'),
     props: true
+  },
+  {
+    path: '/firebase',
+    name: 'firebase',
+    component: () => import('../views/Firebase.vue'),
   }
   
 ]
