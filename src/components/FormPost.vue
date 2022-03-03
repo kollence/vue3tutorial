@@ -25,7 +25,9 @@
 </template>
 
 <script>
+import { collection, addDoc } from "firebase/firestore/lite"; 
 import { ref } from "@vue/reactivity";
+import db from '@/firebase/config.js'
 import createPost from '@/composables/createPost'
 import { useRouter } from 'vue-router';
 export default {
@@ -51,12 +53,13 @@ export default {
     const submitForm = async () => {
         // const id = Math.floor(Math.random() * (99 - 10 + 1)) + 10
         let data = {title: title.value, body: body.value, tags: tags.value}
-        // createPost(data)
-        await fetch('http://localhost:3000/posts',{
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(data)
-        })
+          try {
+            const docRef = await addDoc(collection(db, "posts"),
+            data);
+              console.log("Document written with ID: ", docRef.id);
+          } catch (e) {
+              console.error("Error adding document: ", e);
+          }
         router.push({name: 'posts'})
         // console.log(data);
     }
