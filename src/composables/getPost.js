@@ -1,4 +1,6 @@
 import { ref } from "vue"
+import  db  from "../firebase/config"
+import { doc, getDoc } from 'firebase/firestore/lite';
 
 const getPost = (id) => {
 
@@ -7,15 +9,15 @@ const getPost = (id) => {
     const loadPost = async () => {
         
         try{
-            // await new Promise(res => {
-            //     setTimeout(res, 3000)
-            // })
-            let data = await fetch(`http://localhost:3000/posts/${id}`)
-            // console.log(data);
-            if(!data.ok){
-                throw Error('data not avaliable')
-            }
-             post.value = await data.json()
+            const postCollection = doc(db, 'posts', id);
+                const getRes = await getDoc(postCollection);
+                if (getRes.exists()) {
+                    post.value = {...getRes.data(), id: getRes.id}
+                    // console.log("Document data:", post.value);
+                  } else {
+                      throw Error("This post does not exists")
+                    // console.log("No such document!");
+                  }
 
         } catch(err){
             error.value = err.message

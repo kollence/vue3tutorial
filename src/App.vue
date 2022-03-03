@@ -6,7 +6,7 @@
     <router-link to="/formpage">Form</router-link> |<br>
     <router-link to="/compositionapi">Composition Api</router-link> |
     <router-link to="/posts">Posts</router-link> |
-    <router-link to="/firebase">Firebase home</router-link> |
+    <router-link to="/jsonserver">Json Server</router-link> |
   </nav>
   <router-view/>
 </template>

@@ -50,9 +50,9 @@ const routes = [
     props: true
   },
   {
-    path: '/firebase',
-    name: 'firebase',
-    component: () => import('../views/Firebase.vue'),
+    path: '/jsonserver',
+    name: 'jsonserver',
+    component: () => import('../views/JsonServer.vue'),
   }
   
 ]
