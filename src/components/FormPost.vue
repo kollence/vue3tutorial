@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import { collection, addDoc } from "firebase/firestore/lite"; 
+import { collection, addDoc, serverTimestamp } from "firebase/firestore/lite"; 
 import { ref } from "@vue/reactivity";
 import db from '@/firebase/config.js'
 // import createPost from '@/composables/createPost'
@@ -52,7 +52,7 @@ export default {
     }
     const submitForm = async () => {
         // const id = Math.floor(Math.random() * (99 - 10 + 1)) + 10
-        let data = {title: title.value, body: body.value, tags: tags.value}
+        let data = {title: title.value, body: body.value, tags: tags.value, createdAt: serverTimestamp()}
           try {
             const docRef = await addDoc(collection(db, "posts"),
             data);

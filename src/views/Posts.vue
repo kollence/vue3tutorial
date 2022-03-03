@@ -1,9 +1,9 @@
 <template>
   <h1>Posts</h1>
+  <div class="actions"><router-link to="/create">Create</router-link></div>
   
   <div v-if="error">{{error}}</div>
   <div v-if="posts.length" class="postslist">
-  <div class="actions"><router-link to="/create">Create</router-link></div>
   <div style="display: flex;">
   <PostList :posts="posts" />
   <TagList :posts="posts" />
