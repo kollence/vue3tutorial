@@ -1,5 +1,5 @@
 <template>
-  <h1>Posts</h1>
+  <h1>Posts {{counter.double}}</h1>
   <div class="actions"><router-link to="/create">Create</router-link></div>
   
   <div v-if="error">{{error}}</div>
@@ -18,17 +18,17 @@ import PostList from "@/components/PostList.vue";
 import getPosts from "@/composables/getPosts"
 import Loader from '@/components/Loader.vue'
 import TagList from '@/components/TagList.vue'
-
+import { useCounterStore } from '@/store/counter'
 export default {
   name: "posts",
   components: {
     PostList, Loader,TagList
   },
   setup() {
-
+    const counter = useCounterStore()
     const {posts, error, loadPosts} = getPosts()
     loadPosts()
-    return {posts, error}
+    return {posts, error, counter}
   },
   
 };
