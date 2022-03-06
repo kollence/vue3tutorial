@@ -7,6 +7,8 @@
     <router-link to="/compositionapi">Composition Api</router-link> |
     <router-link to="/posts">Posts</router-link> |
     <router-link to="/jsonserver">Json Server</router-link> |
+    <router-link to="/realtime">Real Time</router-link> | <br>
+    <router-link to="/pinia">Pinia State Mg</router-link> |
   </nav>
   <router-view/>
 </template>

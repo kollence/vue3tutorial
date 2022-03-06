@@ -53,6 +53,16 @@ const routes = [
     path: '/jsonserver',
     name: 'jsonserver',
     component: () => import('../views/JsonServer.vue'),
+  },
+  {
+    path: '/realtime',
+    name: 'realtime',
+    component: () => import('../views/RealTime.vue'),
+  },
+  {
+    path: '/pinia',
+    name: 'pinia',
+    component: () => import('../views/Pinia.vue'),
   }
   
 ]
